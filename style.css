@@ -1,0 +1,427 @@
+/* Estilos generales */
+*{
+    padding: 0;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background-color: #cedff1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+
+header{
+    width: 90%;
+    height: 70px;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: #0A3871;
+}
+
+main{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+
+/* Sección 1 */
+.section1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contenedor-textarea{
+    width: 650px;
+    height: 500px;
+    background-color: #f4f4fc;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.textarea {
+    width: 650px;
+    height: 95%;
+    border-radius: 20px;
+    border: none;
+    background-color: #f4f4fc;
+    cursor: pointer;
+    color: #0A3871;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    resize: none;
+
+}
+
+
+.section2-elementos {
+    text-align: center;
+    font-size: 20px;
+    background-color: #F3F3F3;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.div-botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 300px;
+    height: 50px;
+    border-radius: 24px;
+    background-color: #0A3871;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Sección 2 */
+.section2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.imagen {
+    width: 350px;
+    height: 500px;
+    object-fit:cover;
+}
+
+.contenedor-resultado{
+    width: 450px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.contenedor-r {
+    width: 450px;
+    height: 100%;
+    border-radius: 20px;
+    word-break:break-all;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f4f4fc;
+    cursor: pointer;
+    color: #0A3871;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    
+
+}
+
+.contenedor-r button {
+    margin: 0 auto;
+}
+
+.resultado-parrafo {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    color: #343A40;
+
+}
+
+.contenedor-copiar{
+    display: flex;
+    position: absolute;
+    bottom: 400px;
+    top: 700px;
+    background-color: aqua;
+    padding-left: 40px;
+}
+
+.btn-copiar{
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    background-color: #ffffff;
+    color: #0A3871;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #0A3871;
+    cursor: pointer;
+    position: relative;
+    top: 50px;
+    right: 4px;
+}
+
+.ocultar{
+    display: none;
+}
+
+footer {
+    padding-top: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* 768 */
+@media (max-width: 768px) {
+
+    main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+    
+    /* Sección 1 */
+    .section1 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 40px;
+    }
+    
+    .contenedor-textarea{
+        width: 740px;
+        max-height: 310px;
+        background-color: #f4f4fc;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .textarea {
+        width: 700px;
+        height: 95%;
+    }
+    
+    .section2-elementos {
+        width: 740px;
+        text-align: center;
+        font-size: 20px;
+        background-color: #F3F3F3;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    .div-botones {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .btn {
+        width: 190px;
+        height: 43px;
+    }
+    
+    /* Sección 2 */
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    
+    .imagen {
+        display: none;
+    }
+    
+    .section2-elementos h4{
+        font-size: 16px;
+    }
+
+    .section2-elementos p{
+        padding-top: 8px;
+        font-size: 14px;
+    }
+
+    .contenedor-resultado{
+        width: 740px;
+        max-height: 200px;
+    }
+    
+    .contenedor-r {
+        width: 740px;
+        height: 100%;
+        border-radius: 20px;
+        word-break:break-all;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #f4f4fc;
+        cursor: pointer;
+        color: #0A3871;
+        font-size: 32px;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+    }
+    
+    .contenedor-copiar{
+        display: flex;
+        position: absolute;
+        bottom: 400px;
+        top: 700px;
+        background-color: aqua;
+        padding-left: 40px;
+    }
+    
+    .ocultar{
+        display: none;
+    }
+    
+    footer {
+        padding-top: 50px;
+        font-size: 1rem;
+    }
+}
+
+/* #75px */
+@media (max-width: 375px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+    
+    /* Sección 1 */
+    .section1 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 40px;
+    }
+    
+    .contenedor-textarea{
+        width: 350px;
+        max-height: 300px;
+    }
+
+    .textarea {
+        width: 350px;
+        height: 95%;
+    }
+    
+    .section2-elementos {
+        width: 350px;
+    }
+    
+    .div-botones {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .btn {
+        width: 140px;
+        height: 40px;
+    }
+    
+    /* Sección 2 */
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    
+    .section2-elementos h4{
+        font-size: 16px;
+    }
+
+    .section2-elementos p{
+        padding-top: 8px;
+        font-size: 14px;
+    }
+
+    .contenedor-resultado{
+        width: 350px;
+        max-height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    
+    }
+    
+    .contenedor-r {
+        width: 350px;
+        height: 100%;
+        border-radius: 20px;
+        word-break:break-all;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #f4f4fc;
+        cursor: pointer;
+        color: #0A3871;
+        font-size: 32px;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+    }
+    
+    .contenedor-r button {
+        margin: 0 auto;
+    }
+    
+    .resultado-parrafo {
+        font-size: 24px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+        color: #343A40;
+    
+    }
+    
+    .contenedor-copiar{
+        display: flex;
+        position: absolute;
+        bottom: 400px;
+        top: 700px;
+        background-color: aqua;
+        padding-left: 40px;
+    }
+    
+    
+    footer {
+        padding-top: 50px;
+        font-size: 1rem;
+    }
+}
+
+
