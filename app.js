@@ -1,40 +1,45 @@
-
 // Selección de elementos globales
-const divResultado = document.getElementById('div-resultado');
-const ocultarElementos = document.getElementById('ocultar-elementos');
-const darkMode = document.getElementById('dark-mode');
+const inputText = document.getElementById("inputText");
+const btnEncriptar = document.getElementById("btn-encriptar");
+const btnDensencriptar = document.getElementById("btn-desencriptar");
+const btnCopiar = document.getElementById("btn-copiar");
+const seccion2 = document.getElementById("seccion2");
+const seccion3 = document.getElementById("seccion3");
+const textoResultado = document.getElementById("texto-resultado");
 
-
-// Evento en el boton encriptar
-const btnEncriptar = document.getElementById('encriptar').addEventListener('click', (e) => {
-    const inputText = document.getElementById('inputText').value
-
-    if (!inputText) {
-        alert('Debe introducir alguna palabra en el campo');
+// const darkMode = document.getElementById('dark-mode');
+btnEncriptar.addEventListener("click", ()=> {
+    if (inputText.value != "") {
+        seccion2.classList.add("ocultar");
+        seccion3.classList.remove("ocultar");
+        textoResultado.textContent = encriptar(inputText.value);
     } else {
-        ocultarElementos.classList.add('ocultar')
-        resultadoDom(encriptar(inputText));
+        alert("Introduzca un texto valido!");
     }
 });
 
-// Evento en el boton desencriptar
-const btnDesencriptar = document.getElementById('desencriptar').addEventListener('click', (e) => {
-    const inputText = document.getElementById('inputText').value;
-
-    if (!inputText) {
-        alert('Debe introducir alguna palabra en el campo');
-        return
-
+btnDensencriptar.addEventListener("click", ()=> {
+    if (inputText.value != "") {
+        seccion2.classList.add("ocultar");
+        seccion3.classList.remove("ocultar");
+        textoResultado.textContent = desencriptar(inputText.value);
     } else {
-        ocultarElementos.classList.add('ocultar')
-        resultadoDom(desencriptar(inputText));
+        alert("Introduzca un texto valido!")
     }
 });
 
-// Creación de funciones
+btnCopiar.addEventListener("click", ()=> {
+    if (inputText.value != "") {
+        copiarContenido;
+    } else {
+        alert("No hay nada para copiar")
+    }
+});
+
+// Función encriptar
 function encriptar(texto) {
     let resultado = '';
-    for (var i = 0; i < texto.length; i++) {
+    for (let i = 0; i < texto.length; i++) {
         if (texto[i] == "a") {
             resultado += "ai"
         }
@@ -63,9 +68,9 @@ function encriptar(texto) {
     return resultado;
 }
 
+//Función desencriptar
 function desencriptar(texto) {
     let textoFinal = "";
-
     for (var i = 0; i < texto.length; i++) {
         if (texto[i] == "a") {
             textoFinal = textoFinal + "a"
@@ -97,21 +102,14 @@ function desencriptar(texto) {
     return textoFinal;
 }
 
-function resultadoDom(texto) {
-    divResultado.classList.remove('ocultar')
-    divResultado.innerHTML =
-        `
-            <div class='contenedor-r'>
-                <p class='resultado-parrafo' id='texto' >${texto}</p>
-            </div>
-            <button class='btn' id='copiar'>Copiar</button>
-            
-        `
-    document.getElementById('copiar').addEventListener('click', (e) => {
-        let contenido = document.getElementById('texto').textContent;
-        navigator.clipboard.writeText(contenido);
-        const inputText = document.getElementById('inputText').value = "";
-    });
+const copiarContenido = async () => {
+    let texto = textoResultado.innerHTML;
+    try {
+      await navigator.clipboard.writeText(texto);
+      console.log('Contenido copiado al portapapeles');
+    } catch (err) {
+      console.error('Error al copiar: ', err);
+    }
 }
 
 
