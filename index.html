@@ -15,26 +15,20 @@
   </header>
 
   <main>
-
     <section class="seccion1">
-
       <div class="seccion1-contenedor">
-
         <div class="contenedor-textarea">
           <textarea class="textarea" id="inputText" placeholder="Ingrese el texto aquí"></textarea>
           <p>❗Solo letras minúsculas y sin acentos</p>
         </div>
-
         <div class="div-botones">
-          <button class="btn" id="encriptar">Encriptar</button>
-          <button class="btn" id="desencriptar">Desencriptar</button>
+          <button class="btn" id="btn-encriptar">Encriptar</button>
+          <button class="btn" id="btn-desencriptar">Desencriptar</button>
         </div>
-
       </div>
 
     </section>
-
-    <section class="seccion2 ocultar" id="seccion2">
+    <section class="seccion2" id="seccion2">
       <div class="seccion2-imagen">
         <img id="imagen" src="imagen.png" alt="">
       </div>
@@ -44,11 +38,15 @@
       </div>
     </section>
 
-    <section class="seccion3">
+    <section class="seccion3 ocultar" id="seccion3">
       <div class="div-resultado" id="div-resultado">
-        <p>hola</p>
-        <button class="btn btn-copiar">Copiar</button>
+        <p id="texto-resultado"></p>
+        <button class="btn" id="btn-copiar">Copiar</button>
       </div>
+    </section>
+
+    <section class="seccion4-spinner ocultar" id="seccion4-spinner">
+      <div id="spinner"></div>
     </section>
 
   </main>

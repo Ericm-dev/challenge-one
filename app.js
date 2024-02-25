@@ -1,40 +1,73 @@
-
 // Selección de elementos globales
-const divResultado = document.getElementById('div-resultado');
-const ocultarElementos = document.getElementById('ocultar-elementos');
-const darkMode = document.getElementById('dark-mode');
+const inputText = document.getElementById("inputText");
+const btnEncriptar = document.getElementById("btn-encriptar");
+const btnDensencriptar = document.getElementById("btn-desencriptar");
+const btnCopiar = document.getElementById("btn-copiar");
+const seccion2 = document.getElementById("seccion2");
+const seccion3 = document.getElementById("seccion3");
+const seccionSpinner = document.getElementById("seccion4-spinner");
+const textoResultado = document.getElementById("texto-resultado");
 
+// const darkMode = document.getElementById('dark-mode');
 
-// Evento en el boton encriptar
-const btnEncriptar = document.getElementById('encriptar').addEventListener('click', (e) => {
-    const inputText = document.getElementById('inputText').value
-
-    if (!inputText) {
-        alert('Debe introducir alguna palabra en el campo');
+//boton de encriptar
+btnEncriptar.addEventListener("click", () => {
+    if (inputText.value != "") {
+        seccionSpinner.classList.contains("ocultar")
+        seccionSpinner.classList.toggle("ocultar");
+        seccion2.classList.add("ocultar");
+        //hace un delay ficticio
+        async function start() {
+            seccionSpinner.classList.remove("ocultar")
+            await delay(2000);
+            seccionSpinner.classList.add("ocultar")
+            seccion3.classList.remove("ocultar")
+            textoResultado.textContent = encriptar(inputText.value);
+        }
+        //ejecula la funcion asyn
+        start();
+        seccion3.classList.add("ocultar");
     } else {
-        ocultarElementos.classList.add('ocultar')
-        resultadoDom(encriptar(inputText));
+        alert("Introduzca un texto valido!");
     }
 });
 
-// Evento en el boton desencriptar
-const btnDesencriptar = document.getElementById('desencriptar').addEventListener('click', (e) => {
-    const inputText = document.getElementById('inputText').value;
-
-    if (!inputText) {
-        alert('Debe introducir alguna palabra en el campo');
-        return
-
+// boton de desencriptar
+btnDensencriptar.addEventListener("click", () => {
+    if (inputText.value != "") {
+        seccionSpinner.classList.contains("ocultar")
+        seccionSpinner.classList.toggle("ocultar");
+        seccion2.classList.add("ocultar");
+        //hace un delay ficticio
+        async function start() {
+            seccionSpinner.classList.remove("ocultar")
+            await delay(2000);
+            seccionSpinner.classList.add("ocultar")
+            seccion3.classList.remove("ocultar")
+            textoResultado.textContent = encriptar(inputText.value);
+        }
+        //ejecula la funcion asyn
+        start();
+        seccion3.classList.add("ocultar");
     } else {
-        ocultarElementos.classList.add('ocultar')
-        resultadoDom(desencriptar(inputText));
+        alert("Introduzca un texto valido!");
     }
 });
 
-// Creación de funciones
+// boton de copiar
+btnCopiar.addEventListener("click", () => {
+    if (inputText.value != "") {
+        copiar();
+        inputText.focus();
+    } else {
+        alert("No hay nada para copiar")
+    }
+});
+
+// Función encriptar
 function encriptar(texto) {
     let resultado = '';
-    for (var i = 0; i < texto.length; i++) {
+    for (let i = 0; i < texto.length; i++) {
         if (texto[i] == "a") {
             resultado += "ai"
         }
@@ -63,9 +96,9 @@ function encriptar(texto) {
     return resultado;
 }
 
+//Función desencriptar
 function desencriptar(texto) {
     let textoFinal = "";
-
     for (var i = 0; i < texto.length; i++) {
         if (texto[i] == "a") {
             textoFinal = textoFinal + "a"
@@ -97,22 +130,21 @@ function desencriptar(texto) {
     return textoFinal;
 }
 
-function resultadoDom(texto) {
-    divResultado.classList.remove('ocultar')
-    divResultado.innerHTML =
-        `
-            <div class='contenedor-r'>
-                <p class='resultado-parrafo' id='texto' >${texto}</p>
-            </div>
-            <button class='btn' id='copiar'>Copiar</button>
-            
-        `
-    document.getElementById('copiar').addEventListener('click', (e) => {
-        let contenido = document.getElementById('texto').textContent;
-        navigator.clipboard.writeText(contenido);
-        const inputText = document.getElementById('inputText').value = "";
-    });
+function copiar() {
+    navigator.clipboard.writeText(textoResultado.textContent);
+    inputText.value = "";
 }
+
+//Crear una espera a la siguiente ejecución del codigo
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
+
+
+
+
+
 
 
 
