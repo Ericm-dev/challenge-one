@@ -10,12 +10,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: stretch;
     background-color: rgb(195, 223, 235);
 }
 
 header{
     padding-left: 30px;
     height: 70px;
+    align-self: flex-start;
 }
 
 header h1 {
@@ -110,7 +112,7 @@ footer {
     display: none;
 }
 
-#spinner {
+.seccion4-spinner {
     border: 16px solid #F3F3F3;
     border-top: 16px solid #3498DB;
     border-radius: 50%;
