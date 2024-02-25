@@ -4,6 +4,7 @@ const divResultado = document.getElementById('div-resultado');
 const ocultarElementos = document.getElementById('ocultar-elementos');
 const darkMode = document.getElementById('dark-mode');
 
+
 // Evento en el boton encriptar
 const btnEncriptar = document.getElementById('encriptar').addEventListener('click', (e) => {
     const inputText = document.getElementById('inputText').value
