@@ -8,7 +8,7 @@ const seccion3 = document.getElementById("seccion3");
 const textoResultado = document.getElementById("texto-resultado");
 
 // const darkMode = document.getElementById('dark-mode');
-btnEncriptar.addEventListener("click", ()=> {
+btnEncriptar.addEventListener("click", () => {
     if (inputText.value != "") {
         seccion2.classList.add("ocultar");
         seccion3.classList.remove("ocultar");
@@ -18,7 +18,7 @@ btnEncriptar.addEventListener("click", ()=> {
     }
 });
 
-btnDensencriptar.addEventListener("click", ()=> {
+btnDensencriptar.addEventListener("click", () => {
     if (inputText.value != "") {
         seccion2.classList.add("ocultar");
         seccion3.classList.remove("ocultar");
@@ -28,9 +28,10 @@ btnDensencriptar.addEventListener("click", ()=> {
     }
 });
 
-btnCopiar.addEventListener("click", ()=> {
+btnCopiar.addEventListener("click", () => {
     if (inputText.value != "") {
-        copiarContenido;
+        copiar();
+        inputText.focus();
     } else {
         alert("No hay nada para copiar")
     }
@@ -102,14 +103,10 @@ function desencriptar(texto) {
     return textoFinal;
 }
 
-const copiarContenido = async () => {
-    let texto = textoResultado.innerHTML;
-    try {
-      await navigator.clipboard.writeText(texto);
-      console.log('Contenido copiado al portapapeles');
-    } catch (err) {
-      console.error('Error al copiar: ', err);
-    }
+function copiar() {
+    let contenido = textoResultado.textContent;
+    navigator.clipboard.writeText(contenido);
+    const inputText = document.getElementById('inputText').value = "";
 }
 
 
