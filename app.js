@@ -5,29 +5,56 @@ const btnDensencriptar = document.getElementById("btn-desencriptar");
 const btnCopiar = document.getElementById("btn-copiar");
 const seccion2 = document.getElementById("seccion2");
 const seccion3 = document.getElementById("seccion3");
+const seccionSpinner = document.getElementById("seccion4-spinner");
 const textoResultado = document.getElementById("texto-resultado");
 
 // const darkMode = document.getElementById('dark-mode');
+
+//boton de encriptar
 btnEncriptar.addEventListener("click", () => {
     if (inputText.value != "") {
+        seccionSpinner.classList.contains("ocultar")
+        seccionSpinner.classList.toggle("ocultar");
         seccion2.classList.add("ocultar");
-        seccion3.classList.remove("ocultar");
-        textoResultado.textContent = encriptar(inputText.value);
+        //hace un delay ficticio
+        async function start() {
+            seccionSpinner.classList.remove("ocultar")
+            await delay(2000);
+            seccionSpinner.classList.add("ocultar")
+            seccion3.classList.remove("ocultar")
+            textoResultado.textContent = encriptar(inputText.value);
+        }
+        //ejecula la funcion asyn
+        start();
+        seccion3.classList.add("ocultar");
     } else {
         alert("Introduzca un texto valido!");
     }
 });
 
+// boton de desencriptar
 btnDensencriptar.addEventListener("click", () => {
     if (inputText.value != "") {
+        seccionSpinner.classList.contains("ocultar")
+        seccionSpinner.classList.toggle("ocultar");
         seccion2.classList.add("ocultar");
-        seccion3.classList.remove("ocultar");
-        textoResultado.textContent = desencriptar(inputText.value);
+        //hace un delay ficticio
+        async function start() {
+            seccionSpinner.classList.remove("ocultar")
+            await delay(2000);
+            seccionSpinner.classList.add("ocultar")
+            seccion3.classList.remove("ocultar")
+            textoResultado.textContent = encriptar(inputText.value);
+        }
+        //ejecula la funcion asyn
+        start();
+        seccion3.classList.add("ocultar");
     } else {
-        alert("Introduzca un texto valido!")
+        alert("Introduzca un texto valido!");
     }
 });
 
+// boton de copiar
 btnCopiar.addEventListener("click", () => {
     if (inputText.value != "") {
         copiar();
@@ -104,10 +131,20 @@ function desencriptar(texto) {
 }
 
 function copiar() {
-    let contenido = textoResultado.textContent;
-    navigator.clipboard.writeText(contenido);
-    const inputText = document.getElementById('inputText').value = "";
+    navigator.clipboard.writeText(textoResultado.textContent);
+    inputText.value = "";
 }
+
+//Crear una espera a la siguiente ejecución del codigo
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
+
+
+
+
+
 
 
 

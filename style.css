@@ -110,6 +110,25 @@ footer {
     display: none;
 }
 
+#spinner {
+    border: 16px solid #F3F3F3;
+    border-top: 16px solid #3498DB;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-top: 180px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
 @media only screen and (min-width: 578px) {
     /* main {
         gap: 15px;
