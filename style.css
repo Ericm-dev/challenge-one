@@ -11,11 +11,11 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    background-color: rgb(195, 223, 235);
+    background-color: rgb(244, 248, 250);
 }
 
 header{
-    padding-left: 30px;
+    padding-left: 10px;
     height: 70px;
     align-self: flex-start;
 }
@@ -32,7 +32,7 @@ main {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: white;
+    background-color: rgb(204, 234, 237);
 }
 
 .seccion1-contenedor {
@@ -40,12 +40,11 @@ main {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 2.5rem;
-    background-color: white;
 }
 
 .contenedor-textarea {
     text-align: center;
-    background-color: white;
+    border-radius: 15px;
 }
 
 .textarea {
@@ -53,6 +52,8 @@ main {
     min-height: 160px;
     border-radius: 15px;
     padding: 10px;
+    border: none;
+    text-align: center;
 }
 
 .div-botones {
@@ -67,14 +68,15 @@ main {
     width: 100%;
     height: 50px;
     border: none;
+    color: rgb(95, 70, 70);
+    background-color: rgb(22, 185, 206);
     color: white;
-    background-color: blue;
+    border-radius: 15px;
 }
 
 .seccion2 {
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
     justify-content: center;
 }
 
@@ -85,13 +87,21 @@ main {
 .seccion2-texto {
     padding-top: 35px;
     text-align: center;
-    background-color: white;
 }
 
 .seccion3 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+
+.seccion4 {
+    display: flex;
+    flex-direction: column;
+}
+
+tamano-spinner{
+
 }
 
 .div-resultado {
@@ -102,6 +112,11 @@ main {
     justify-content: space-between;
     min-height: 120px;
     border-radius: 15px;
+    background-color: white;
+}
+
+.div-resultado p{
+    padding-left: 10px;
 }
 
 footer {
@@ -113,12 +128,13 @@ footer {
 }
 
 .seccion4-spinner {
+    margin: 0 auto;
     border: 16px solid #F3F3F3;
     border-top: 16px solid #3498DB;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    margin-top: 180px;
+    width: 90px;
+    height: 90px;
+    /* margin-top: 180px; */
     animation: spin 2s linear infinite;
   }
   
@@ -177,7 +193,6 @@ footer {
     .contenedor-textarea {
         width: 50vw;
         text-align: center;
-        background-color: white;
     }
 
     .textarea {
@@ -193,8 +208,6 @@ footer {
         height: 50px;
         border-radius: 8px;
         border: none;
-        color: white;
-        background-color: blue;
     }
 
     .seccion2 {
