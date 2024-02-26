@@ -100,10 +100,6 @@ main {
     flex-direction: column;
 }
 
-tamano-spinner{
-
-}
-
 .div-resultado {
     height: 100%;
     display: flex;
