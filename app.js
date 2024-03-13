@@ -44,7 +44,7 @@ btnDensencriptar.addEventListener("click", () => {
             await delay(2000);
             seccionSpinner.classList.add("ocultar")
             seccion3.classList.remove("ocultar")
-            textoResultado.textContent = encriptar(inputText.value);
+            textoResultado.textContent = desencriptar(inputText.value);
         }
         //ejecula la funcion asyn
         start();
