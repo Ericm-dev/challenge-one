@@ -7,7 +7,7 @@ const seccion2 = document.getElementById("seccion2");
 const seccion3 = document.getElementById("seccion3");
 const seccionSpinner = document.getElementById("seccion4-spinner");
 const textoResultado = document.getElementById("texto-resultado");
-
+const spinnerTexto = document.getElementById("spinnerTexto");
 // const darkMode = document.getElementById('dark-mode');
 
 //boton de encriptar
@@ -19,6 +19,7 @@ btnEncriptar.addEventListener("click", () => {
         //hace un delay ficticio
         async function start() {
             seccionSpinner.classList.remove("ocultar")
+            spinnerTexto.innerText = "Encriptando texto...";
             await delay(2000);
             seccionSpinner.classList.add("ocultar")
             seccion3.classList.remove("ocultar")
@@ -36,6 +37,7 @@ btnEncriptar.addEventListener("click", () => {
 btnDensencriptar.addEventListener("click", () => {
     if (inputText.value != "") {
         seccionSpinner.classList.contains("ocultar")
+        spinnerTexto.innerText = "Desencriptando texto...";
         seccionSpinner.classList.toggle("ocultar");
         seccion2.classList.add("ocultar");
         //hace un delay ficticio
@@ -126,13 +128,15 @@ function desencriptar(texto) {
         }
 
     }
-
     return textoFinal;
 }
 
 function copiar() {
     navigator.clipboard.writeText(textoResultado.textContent);
     inputText.value = "";
+    setTimeout(e => {
+        alert("Texto copiado")
+    },500)
 }
 
 //Crear una espera a la siguiente ejecución del codigo
